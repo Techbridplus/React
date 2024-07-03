@@ -1,0 +1,2 @@
+## vanila javascript se bhi react jaisa kaam kiya ja sakta hai 
+## humara ye kaam nahi ki hume custom react banana aata ho , hume bass pata hona chahiye ki javascript se hi react bani hai
