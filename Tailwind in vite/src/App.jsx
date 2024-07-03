@@ -2,32 +2,25 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Card from './Card'
 
 function App() {
   const [count, setCount] = useState(0)
+  // let myObj = {
+  //   username: "hitesh",
+  //   age: 21
+  // }
+  // let description="My name is gaurav joshi I am software developer and i make my carrier as a software Engineer"
+  // let newArr = [1, 2, 3]
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className='bg-black h-screen w-screen'>
+      <h1 className='bg-green-400 text-black p-4 rounded-xl mb-4'>Tailwind test</h1>
+            {/* <Card username="chaiaurcode" btnText="click me" description="My name is gaurav joshi I am software developer and i make my carrier as a software Engineer"/>
+            <Card username="hitesh" /> */}
+    </div>
+     
     </>
   )
 }
