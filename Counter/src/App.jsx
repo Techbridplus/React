@@ -9,6 +9,13 @@ function App() {
     
     counter = counter + 1
     setcounter(counter)
+    //setcounter callback accept karta hai, this is a hidden feature
+    /*
+    setcounter((prevCounter) => {return prevCounter + 1}) # prevcounter en name hai bass ye counter ki value fetch karke lata hai
+    setcounter((counter)=>counter+1) 
+    setcounter(counter => counter+1)
+    ye tenno ek hai hai 
+    */
   }
 
  const removeValue = () => { 

@@ -1,0 +1,39 @@
+## vanila javascript se bhi react jaisa kaam kiya ja sakta hai 
+## humara ye kaam nahi ki hume custom react banana aata ho , hume bass pata hona chahiye ki javascript se hi react bani hai
+
+
+## callback{
+    chalo samajte hai =>{
+        dekho fun(parameter){} function mai parameter pass hote hai agar parameter mai ek function pass kiya ho  to uss 
+        passed parameter ko callback kehte hai 
+
+        Example:
+            function greet(name, callback) { 
+                console.log(`Hello, ${name}!`);
+                callback(); // Calling the callback function
+            }
+
+            function sayGoodbye() {
+                console.log("Goodbye!");
+            }
+
+            greet("Alice", sayGoodbye); 
+
+                }
+}
+
+{
+useState note...
+#CONCEPT =>{
+    const [counter,setCounter] = useState(7)
+    setCounter ko samajna hai to counter wale project mai jaao
+}
+abhi tak maine jitna sikha muze pata chala ki GUI mai koi bhi chnage useState HOOk k vajhe se hi aata hai 
+# humne ek counter project banaya jisme humne ek variable declare kiya or jab humne ek button ko jab click kiya to
+counter increase ho , jo hua bhi lekin vohi counter GUI mai update nahi hua to humne Hook use kiya
+}
+
+#CONCEPT =>{
+    #### {React re-renders the component whenever there is a state change}, matlab agar GUI mai koi bhi change hoga 
+    to component re-renders honge
+}

@@ -17,8 +17,8 @@ function App() {
     <>
     <div className='bg-black h-screen w-screen'>
       <h1 className='bg-green-400 text-black p-4 rounded-xl mb-4'>Tailwind test</h1>
-            {/* <Card username="chaiaurcode" btnText="click me" description="My name is gaurav joshi I am software developer and i make my carrier as a software Engineer"/>
-            <Card username="hitesh" /> */}
+          <Card username="chaiaurcode" btnText="click me" description="My name is gaurav joshi I am software developer and i make my carrier as a software Engineer"/>
+          <Card username="hitesh" />
     </div>
      
     </>
