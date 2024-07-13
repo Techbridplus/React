@@ -1,0 +1,12 @@
+/* InputBox.module.css */
+.hideNumberInputArrows {
+	-webkit-appearance: none;
+	-moz-appearance: textfield;
+	appearance: none;
+}
+
+.hideNumberInputArrows::-webkit-inner-spin-button,
+.hideNumberInputArrows::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
