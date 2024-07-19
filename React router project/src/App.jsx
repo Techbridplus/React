@@ -10,7 +10,8 @@ function App() {
   return (
       <>
         <Header/>
-        <Outlet/>
+        <Outlet/>//This is the place where the child components will be rendered ##jisko select kiya jayega uska content yaha render hoga
+        //so <outlet/> dynamically render the child components 
         <Footer/>
       </>
     )
