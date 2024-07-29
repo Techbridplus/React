@@ -1,5 +1,8 @@
 import {createContext, useContext} from "react"
 
+/* 
+## ye ek tarika hai store banane lekin hum redux toolkit use karte hai most efficient way hai
+*/
 export const TodoContext = createContext({
     todos:[{
         id: 0,
