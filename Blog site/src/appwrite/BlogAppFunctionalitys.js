@@ -14,18 +14,19 @@ export class Service{
         this.bucket = new Storage(this.client);
     }
 
-    async createPost({title, slug, content, featuredImage, status, userId}){
+    async createPost({Title, slug, Content, featuredImage, status, userID}){
+        //console.log("Creating post with data:", { Title, slug, Content, featuredImage, status, userID });
         try {
             return await this.databases.createDocument(
-                config.appwriteDatabaseId,
+                config.appwriteDatabaseID,
                 config.appwriteCollectionId,
                 slug,
                 {
-                    title,
-                    content,
+                    Title,
+                    Content,
                     featuredImage,
                     status,
-                    userId,
+                    userID,
                 }
             )
         } catch (error) {
@@ -33,15 +34,15 @@ export class Service{
         }
     }
 
-    async updatePost(slug, {title, content, featuredImage, status}){
+    async updatePost(slug, {Title, Content, featuredImage, status}){
         try {
             return await this.databases.updateDocument(
-                config.appwriteDatabaseId,
+                config.appwriteDatabaseID,
                 config.appwriteCollectionId,
                 slug,
                 {
-                    title,
-                    content,
+                    Title,
+                    Content,
                     featuredImage,
                     status,
 
@@ -55,7 +56,7 @@ export class Service{
     async deletePost(slug){
         try {
             await this.databases.deleteDocument(
-                config.appwriteDatabaseId,
+                config.appwriteDatabaseID,
                 config.appwriteCollectionId,
                 slug
             
@@ -70,7 +71,7 @@ export class Service{
     async getPost(slug){
         try {
             return await this.databases.getDocument(
-                config.appwriteDatabaseId,
+                config.appwriteDatabaseID,
                 config.appwriteCollectionId,
                 slug
             
@@ -84,7 +85,7 @@ export class Service{
     async getPosts(queries = [Query.equal("status", "active")]){
         try {
             return await this.databases.listDocuments(
-                config.appwriteDatabaseId,
+                config.appwriteDatabaseID,
                 config.appwriteCollectionId,
                 queries,
                 
@@ -99,9 +100,14 @@ export class Service{
     // file upload service
 
     async uploadFile(file){
+        const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB limit
+        if (file.size > MAX_FILE_SIZE) {
+            throw new Error("File size not allowed. Maximum allowed size is 5MB.");
+        }
+
         try {
             return await this.bucket.createFile(
-                config.appwriteBucketId,
+                config.appwriteBucketID,
                 ID.unique(),
                 file
             )
@@ -114,7 +120,7 @@ export class Service{
     async deleteFile(fileId){
         try {
             await this.bucket.deleteFile(
-                config.appwriteBucketId,
+                config.appwriteBucketID,
                 fileId
             )
             return true
@@ -126,12 +132,12 @@ export class Service{
 
     getFilePreview(fileId){
         return this.bucket.getFilePreview(
-            config.appwriteBucketId,
+            config.appwriteBucketID,
             fileId
         )
     }
 }
 
 
-const service = new Service()
-export default service
+const Blogservice = new Service()
+export default Blogservice
