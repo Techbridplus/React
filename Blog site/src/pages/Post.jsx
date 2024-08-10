@@ -13,6 +13,7 @@ export default function Post() {
     const userData = useSelector((state) => state.auth.userData);
 
     const isAuthor = post && userData ? post.userID === userData.$id : false;
+    console.log("isAuthor : ",isAuthor)
 
     useEffect(() => {
         if (slug) {
